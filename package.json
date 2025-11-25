@@ -1,0 +1,83 @@
+{
+    "name": "layout-manager",
+    "displayName": "Layout Manager",
+    "description": "Gestisci layout personalizzati per il tuo workflow",
+    "version": "0.0.1",
+    "engines": {
+      "vscode": "^1.80.0"
+    },
+    "categories": [
+      "Other"
+    ],
+    "activationEvents": [
+      "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+      "commands": [
+        {
+          "command": "layoutManager.selectLayout",
+          "title": "Layout Manager: Select Layout",
+          "icon": "$(layout)"
+        },
+        {
+          "command": "layoutManager.layout1",
+          "title": "Layout Manager: Research & Search"
+        },
+        {
+          "command": "layoutManager.layout2",
+          "title": "Layout Manager: Agent Mode"
+        },
+        {
+          "command": "layoutManager.layout3",
+          "title": "Layout Manager: Editor Mode"
+        },
+        {
+          "command": "layoutManager.layout4",
+          "title": "Layout Manager: Git & Terminal"
+        }
+      ],
+      "keybindings": [
+        {
+          "command": "layoutManager.layout1",
+          "key": "ctrl+alt+1",
+          "mac": "cmd+alt+1"
+        },
+        {
+          "command": "layoutManager.layout2",
+          "key": "ctrl+alt+2",
+          "mac": "cmd+alt+2"
+        },
+        {
+          "command": "layoutManager.layout3",
+          "key": "ctrl+alt+3",
+          "mac": "cmd+alt+3"
+        },
+        {
+          "command": "layoutManager.layout4",
+          "key": "ctrl+alt+4",
+          "mac": "cmd+alt+4"
+        },
+        {
+          "command": "layoutManager.selectLayout",
+          "key": "ctrl+alt+l",
+          "mac": "cmd+alt+l"
+        }
+      ]
+    },
+    "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./",
+      "pretest": "npm run compile && npm run lint",
+      "lint": "eslint src --ext ts"
+    },
+    "devDependencies": {
+      "@types/vscode": "^1.80.0",
+      "@types/node": "20.x",
+      "@typescript-eslint/eslint-plugin": "^6.4.1",
+      "@typescript-eslint/parser": "^6.4.1",
+      "eslint": "^8.47.0",
+      "typescript": "^5.1.6"
+    }
+  }
