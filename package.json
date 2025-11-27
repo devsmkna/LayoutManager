@@ -14,54 +14,31 @@
     ],
     "main": "./out/extension.js",
     "contributes": {
-      "commands": [
-        {
-          "command": "layoutManager.selectLayout",
-          "title": "Layout Manager: Select Layout",
-          "icon": "$(layout)"
-        },
-        {
-          "command": "layoutManager.layout1",
-          "title": "Layout Manager: Research & Search"
-        },
-        {
-          "command": "layoutManager.layout2",
-          "title": "Layout Manager: Agent Mode"
-        },
-        {
-          "command": "layoutManager.layout3",
-          "title": "Layout Manager: Editor Mode"
-        },
-        {
-          "command": "layoutManager.layout4",
-          "title": "Layout Manager: Git & Terminal"
-        }
-      ],
       "keybindings": [
-        {
-          "command": "layoutManager.layout1",
-          "key": "ctrl+alt+1",
-          "mac": "cmd+alt+1"
-        },
-        {
-          "command": "layoutManager.layout2",
-          "key": "ctrl+alt+2",
-          "mac": "cmd+alt+2"
-        },
-        {
-          "command": "layoutManager.layout3",
-          "key": "ctrl+alt+3",
-          "mac": "cmd+alt+3"
-        },
-        {
-          "command": "layoutManager.layout4",
-          "key": "ctrl+alt+4",
-          "mac": "cmd+alt+4"
-        },
         {
           "command": "layoutManager.selectLayout",
           "key": "ctrl+alt+l",
           "mac": "cmd+alt+l"
+        },
+        {
+          "command": "layoutManager.agent",
+          "key": "ctrl+alt+1",
+          "mac": "cmd+alt+1"
+        },
+        {
+          "command": "layoutManager.editor",
+          "key": "ctrl+alt+2",
+          "mac": "cmd+alt+2"
+        },
+        {
+          "command": "layoutManager.search",
+          "key": "ctrl+alt+3",
+          "mac": "cmd+alt+3"
+        },
+        {
+          "command": "layoutManager.git",
+          "key": "ctrl+alt+4",
+          "mac": "cmd+alt+4"
         }
       ]
     },
@@ -73,7 +50,7 @@
       "lint": "eslint src --ext ts"
     },
     "devDependencies": {
-      "@types/vscode": "^1.80.0",
+      "@types/vscode": "^1.106.1",
       "@types/node": "20.x",
       "@typescript-eslint/eslint-plugin": "^6.4.1",
       "@typescript-eslint/parser": "^6.4.1",
