@@ -14,6 +14,90 @@
     ],
     "main": "./out/extension.js",
     "contributes": {
+      "commands": [
+        {
+          "command": "layoutManager.selectLayout",
+          "title": "Seleziona Layout"
+        },
+        {
+          "command": "layoutManager.createLayout",
+          "title": "Crea Nuovo Layout"
+        },
+        {
+          "command": "layoutManager.manageLayouts",
+          "title": "Gestisci Layout"
+        },
+        {
+          "command": "layoutManager.editLayout",
+          "title": "Modifica Layout"
+        }
+      ],
+      "configuration": {
+        "title": "Layout Manager",
+        "properties": {
+          "layoutManager.layouts": {
+            "type": "array",
+            "description": "Configurazione dei layout personalizzati",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Nome del layout"
+                },
+                "primarySidebar": {
+                  "type": "object",
+                  "description": "Configurazione della primary sidebar",
+                  "properties": {
+                    "view": {
+                      "type": "string",
+                      "enum": ["explorer", "search", "scm", "extensions", "debug"],
+                      "description": "View da visualizzare (default: explorer)"
+                    },
+                    "position": {
+                      "type": "string",
+                      "enum": ["left", "right"],
+                      "description": "Posizione della sidebar"
+                    }
+                  }
+                },
+                "auxiliarySidebar": {
+                  "type": "object",
+                  "description": "Configurazione della auxiliary sidebar",
+                  "properties": {
+                    "mode": {
+                      "type": "string",
+                      "enum": ["agent", "ask", "plan"],
+                      "description": "Modalità AI (default: agent)"
+                    },
+                    "position": {
+                      "type": "string",
+                      "enum": ["left", "right"],
+                      "description": "Posizione della sidebar"
+                    }
+                  }
+                },
+                "panel": {
+                  "type": "object",
+                  "description": "Configurazione del panel",
+                  "properties": {
+                    "view": {
+                      "type": "string",
+                      "enum": ["terminal", "problems", "output", "debug-console"],
+                      "description": "View da visualizzare (default: terminal)"
+                    },
+                    "maximized": {
+                      "type": "boolean",
+                      "description": "Panel massimizzato"
+                    }
+                  }
+                }
+              },
+              "required": ["name"]
+            }
+          }
+        }
+      },
       "keybindings": [
         {
           "command": "layoutManager.selectLayout",
